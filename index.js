@@ -1,5 +1,5 @@
-import { TreeDB } from "./ReplTreeDB.js";
-import express, { json } from 'express';
+const { TreeDB } = require("./ReplTreeDB.js")
+const express = require('express');
 
 // Create an instance of TreeDB
 const treeDB = new TreeDB();
@@ -8,7 +8,7 @@ const treeDB = new TreeDB();
 const app = express();
 
 // Middleware to parse JSON bodies
-app.use(json());
+app.use(express.json());
 
 // Route to set a value in the tree
 app.post('/set', async (req, res) => {
